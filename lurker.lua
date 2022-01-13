@@ -24,7 +24,7 @@ end
 
 local function lastmodified(path)
     local info = love.filesystem.getInfo(path, "file")
-    return info.modtime
+    return info and info.modtime
 end
 
 local lovecallbacknames = {
