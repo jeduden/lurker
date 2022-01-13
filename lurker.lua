@@ -53,6 +53,7 @@ function lurker.init()
   lurker.files = {}
   lurker.funcwrappers = {}
   lurker.lovefuncs = {}
+  lurker.fontSize = 12
   lurker.state = "init"
   lume.each(lurker.getchanged(), lurker.resetfile)
   return lurker
@@ -138,9 +139,9 @@ function lurker.onerror(e, nostacktrace)
     { lume.color("#cdcdcd", 256) },
   }
   love.graphics.reset()
-  love.graphics.setFont(love.graphics.newFont(12))
 
   love.draw = function()
+    love.graphics.setFont(love.graphics.newFont(lurker.fontSize))
     local pad = 25
     local width = love.graphics.getWidth()
 
