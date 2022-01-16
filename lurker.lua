@@ -122,6 +122,10 @@ function lurker.onerror(e, nostacktrace)
   love.update = lurker.update
 
   love.keypressed = function(k)
+    if k == "f5" then
+      lurker.print("Restarting...")
+      love.event.quit("restart")
+    end
     if k == "escape" then
       lurker.print("Exiting...")
       love.event.quit()
